@@ -2,20 +2,21 @@ import Route from '@ember/routing/route';
 import EmberObject, { computed } from '@ember/object';
 
 const Note=EmberObject.extend({
-	content: 'Aucun',
+	content: "Aucun",
 	MAX: 100,
 	size: computed('content',function() {
 		return this.MAX-this.content.length;
 	}),
-	style: computed('size',function(){
-		if(this.size<20){
-			return 'danger'
+	style: computed('size',function() {
+		let size=this.get('size');
+		if(size<20){
+			return "danger"
 		}
-		else if (this.size<50){
-			return 'warning';
+		else if (size<50){
+			return "warning";
 		}
 		else {
-			return 'info';
+			return "info";
 		}
 	})
 	}
