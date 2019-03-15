@@ -1,0 +1,8 @@
+<h3>Exercice 1</h3>
+{{textarea value=model.content maxlength=model.MAX}}
+<div class="alert alert-{{model.style}}">Il vous reste {{model.size}} caractères disponibles</div>
+<button {{action "save" model}} class="btn btn-primary">Enregistrer</button>
+{{#if model.info}}
+<div class="alert alert-success">{{model.info}}</div>
+{{/if}}
+{{outlet}}

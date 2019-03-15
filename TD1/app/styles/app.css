@@ -1,0 +1,17 @@
+li{
+  cursor: pointer;
+}
+li.active{
+  background-color:#8ec16d;
+}
+div.info{
+  background-color: #d9edf7;
+  color:#31708f;
+}
+price{
+  color:#FFFFFF;
+  font-weight: bold;
+}
+body{
+  background-color:#61a1bc;
+}

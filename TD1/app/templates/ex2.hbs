@@ -1,0 +1,15 @@
+<h3>Exercice 2</h3>
+<ul class="list-group">
+  <div class="list-group-item info">{{pluralize model.countActive "Aucun service sélectionné" "Service séléctionnée" "Services sélectionnés"}}</div>
+  {{#each model.services as |service|}}
+    <li class="list-group-item {{if service.active 'active'}}"
+      {{action "toggleActive" service}}>
+      {{ service.name}} {{service.price}}
+   </li>
+  {{/each}}
+</ul>
+<div class="price">Prix total : {{model.sumActive}}</div>
+<hr>
+{{input class="form-control" value=model.codePromo aria-label="Text input with area checkbox"}}
+<div>{{model.tauxReduction}}</div>
+{{outlet}}
