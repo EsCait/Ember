@@ -1,0 +1,22 @@
+{{#link-to "projects.new" class="ui green button"}}
+	<i class="ui plus icon"></i>
+Ajouter un projet...
+{{/link-to}}
+<ul>
+{{#each model as |pro|}}
+	<li>
+	{{pro.name}} 
+	{{pro.descriptif}} 
+	{{pro.startDate}} 
+	{{pro.dueDate}} 
+	{{pro.owner}} 
+	{{#link-to "projects.edit" pro class="ui icon circular basic button"}}
+	<i class="ui edit orange button"></i>
+	{{/link-to}}
+	<button {{action "delete" pro}} class="ui icon circular red button">
+	<i class="ui icon remove"></i>
+	</button></li>
+	{{/each}}
+</ul>
+
+{{outlet}}

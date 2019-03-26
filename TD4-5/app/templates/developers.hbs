@@ -1,0 +1,17 @@
+{{#link-to "developers.new" class="ui blue button"}}
+	<i class="ui plus icon"></i>
+Ajouter un developpeur...
+{{/link-to}}
+<ul>
+{{#each model as |dev|}}
+	<li>{{dev.identity}} 
+	{{#link-to "developers.edit" dev class="ui icon circular basic button"}}
+	<i class="ui edit orange button"></i>
+	{{/link-to}}
+	<button {{action "delete" dev}} class="ui icon circular red button">
+	<i class="ui icon remove"></i>
+	</button></li>
+	{{/each}}
+</ul>
+
+{{outlet}}
