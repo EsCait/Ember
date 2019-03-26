@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('developers', function() {
     this.route('new');
     this.route('edit',{path:'edit/:developer_id'});
+    this.route('remove',{path:'remove/:developer_id'});
   });
   this.route('projects', function() {
     this.route('new');

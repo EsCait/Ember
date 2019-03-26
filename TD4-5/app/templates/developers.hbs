@@ -3,14 +3,18 @@
 Ajouter un developpeur...
 {{/link-to}}
 <ul>
-{{#each model as |dev|}}
+	{{#each model as |dev|}}
 	<li>{{dev.identity}} 
-	{{#link-to "developers.edit" dev class="ui icon circular basic button"}}
-	<i class="ui edit orange button"></i>
-	{{/link-to}}
-	<button {{action "delete" dev}} class="ui icon circular red button">
-	<i class="ui icon remove"></i>
-	</button></li>
+
+
+	  		{{#link-to "developers.edit" dev class="ui icon circular orange button"}}
+				<i class="ui cog icon"></i>
+			{{/link-to}}
+			{{#link-to "developers.remove" dev class="ui icon circular red button"}}
+				<i class="ui icon remove"></i>
+			{{/link-to}}
+
+	</li>
 	{{/each}}
 </ul>
 
