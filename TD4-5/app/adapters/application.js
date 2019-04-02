@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 import { pluralize } from 'ember-inflector';
- 
+
 var Adapater=DS.RESTAdapter.extend({
   ajaxOptions: function(url, type, options) {
     var hash = this._super(url, type, options);
@@ -16,5 +16,5 @@ var Adapater=DS.RESTAdapter.extend({
     return this.get('host')+'/'+this.get('namespace')+`/${modelName}/*?filter={_id:'${id}'}`;
   }
 });
- 
+
 export default Adapater;

@@ -1,11 +1,11 @@
 import DS from 'ember-data';
- 
+
 export default DS.JSONSerializer.extend({
   primaryKey: '_id',
   isNewSerializerAPI: true,
   extractId: function (modelClass, resourceHash) {
     if(resourceHash._id)
-    return (resourceHash._id.$oid || resourceHash._id);
+      return (resourceHash._id.$oid || resourceHash._id);
   },
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
     if(requestType=='createRecord')

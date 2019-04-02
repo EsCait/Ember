@@ -1,5 +1,15 @@
-<div class="ui icon input">
-{{input value=model.copy.identity placeholder="Identity"}}
+<div class="ui form">
+  <label>Identité</label>
+  <div class="ui input">
+    {{input value=model.copy.identity placeholder="Identité"}}
+  </div>
+
+  <button class="ui button green" {{action "save" model}}>
+    <i class="icon check circle"></i> Valider
+  </button>
+  <button class="ui button red" {{action "cancel"}}>
+    <i class="icon remove circle"></i> Annuler
+  </button>
 </div>
-<button class='ui success green button'{{action "save" model}}><i class="ui check icon"></i></button>
+
 {{outlet}}

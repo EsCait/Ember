@@ -1,21 +1,40 @@
-{{#link-to "developers.new" class="ui blue button"}}
-	<i class="ui plus icon"></i>
-Ajouter un developpeur...
+<div id="title" class="ui message">
+  <i class="ui icon table big"></i>
+  <div>
+    <h2>Développeurs</h2>
+    <h3>Administration de données</h3>
+  </div>
+</div>
+
+{{#link-to "developers.new" class="ui button orange"}}
+  Ajouter un développeur...
 {{/link-to}}
-<ul>
-	{{#each model as |dev|}}
-	<li>{{dev.identity}} 
 
+<table class="ui table">
+  <thead>
+  <tr>
+    <th class="nine wide">Identité</th>
+    <th class="one wide">Actions</th>
+  </tr>
+  </thead>
 
-	  		{{#link-to "developers.edit" dev class="ui icon circular orange button"}}
-				<i class="ui cog icon"></i>
-			{{/link-to}}
-			{{#link-to "developers.remove" dev class="ui icon circular red button"}}
-				<i class="ui icon remove"></i>
-			{{/link-to}}
-
-	</li>
-	{{/each}}
-</ul>
+  <tbody>
+  {{#each model as |dev|}}
+    <tr>
+      <td>
+        {{dev.identity}}
+      </td>
+      <td>
+        {{#link-to "developers.edit" dev class="ui icon circular button"}}
+          <i class="ui icon edit"></i>
+        {{/link-to}}
+        {{#link-to "developers.delete" dev class="ui icon circular button red"}}
+          <i class="ui icon delete"></i>
+        {{/link-to}}
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
 
 {{outlet}}
